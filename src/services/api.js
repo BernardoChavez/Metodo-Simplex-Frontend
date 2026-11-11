@@ -1,6 +1,8 @@
 import { sampleCanesData } from '../data/sampleData';
 
-const BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:8000/api/v1';
+// Normalizar la URL de la API (soporta con o sin /api/v1 al final)
+const rawApiUrl = (import.meta.env.VITE_API_URL || 'http://localhost:8000').trim().replace(/\/+$/, '');
+const BASE_URL = rawApiUrl.endsWith('/api/v1') ? rawApiUrl : `${rawApiUrl}/api/v1`;
 
 export const solveSimplex = async (payload) => {
   try {
@@ -35,4 +37,3 @@ export const getSampleCanes = async () => {
   }
   return sampleCanesData;
 };
-
