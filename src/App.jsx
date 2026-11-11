@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import { 
-  Calculator, 
-  Table2, 
-  PieChart, 
+import {
+  Calculator,
+  Table2,
+  PieChart,
   AlertCircle,
   Binary,
   Code2,
@@ -52,16 +52,16 @@ export default function App() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-3">
           {/* Logo FICCT y Título Oficial */}
           <div className="flex items-center gap-3">
-            <button 
+            <button
               type="button"
               onClick={() => setActiveTab('model')}
               className="flex items-center gap-3 text-left focus:outline-none"
             >
               <div className="w-10 h-10 rounded-lg bg-[#1f2229] border border-[#2e323b] flex items-center justify-center p-1 shadow-sm">
-                <img 
-                  src={escudoFicct} 
-                  alt="Escudo FICCT - UAGRM" 
-                  className="w-full h-full object-contain" 
+                <img
+                  src={escudoFicct}
+                  alt="Escudo FICCT - UAGRM"
+                  className="w-full h-full object-contain"
                 />
               </div>
 
@@ -87,11 +87,10 @@ export default function App() {
             <button
               type="button"
               onClick={() => setIsFractionMode(!isFractionMode)}
-              className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg border text-xs font-medium transition-colors ${
-                isFractionMode
+              className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg border text-xs font-medium transition-colors ${isFractionMode
                   ? 'bg-zinc-800 border-orange-500/80 text-orange-400'
                   : 'bg-[#1b1d23] border-[#272a31] text-zinc-400 hover:text-zinc-200 hover:border-zinc-600'
-              }`}
+                }`}
               title="Alternar entre números decimales y quebrados exactos"
             >
               <Binary className="w-3.5 h-3.5 text-orange-500" />
@@ -104,11 +103,10 @@ export default function App() {
               <button
                 type="button"
                 onClick={() => setActiveTab('model')}
-                className={`flex items-center gap-1.5 px-3 py-1.5 rounded-md transition-colors ${
-                  activeTab === 'model'
+                className={`flex items-center gap-1.5 px-3 py-1.5 rounded-md transition-colors ${activeTab === 'model'
                     ? 'bg-orange-600 text-white font-semibold'
                     : 'text-zinc-400 hover:text-zinc-200 hover:bg-[#242730]'
-                }`}
+                  }`}
               >
                 <Calculator className="w-3.5 h-3.5" />
                 <span>Modelo</span>
@@ -118,13 +116,12 @@ export default function App() {
                 type="button"
                 onClick={() => setActiveTab('tableaus')}
                 disabled={!solution}
-                className={`flex items-center gap-1.5 px-3 py-1.5 rounded-md transition-colors ${
-                  !solution 
-                    ? 'opacity-40 cursor-not-allowed text-zinc-500' 
+                className={`flex items-center gap-1.5 px-3 py-1.5 rounded-md transition-colors ${!solution
+                    ? 'opacity-40 cursor-not-allowed text-zinc-500'
                     : activeTab === 'tableaus'
-                    ? 'bg-orange-600 text-white font-semibold'
-                    : 'text-zinc-400 hover:text-zinc-200 hover:bg-[#242730]'
-                }`}
+                      ? 'bg-orange-600 text-white font-semibold'
+                      : 'text-zinc-400 hover:text-zinc-200 hover:bg-[#242730]'
+                  }`}
               >
                 <Table2 className="w-3.5 h-3.5" />
                 <span>Tableros ({solution ? solution.steps.length : 0})</span>
@@ -134,13 +131,12 @@ export default function App() {
                 type="button"
                 onClick={() => setActiveTab('solution')}
                 disabled={!solution}
-                className={`flex items-center gap-1.5 px-3 py-1.5 rounded-md transition-colors ${
-                  !solution 
-                    ? 'opacity-40 cursor-not-allowed text-zinc-500' 
+                className={`flex items-center gap-1.5 px-3 py-1.5 rounded-md transition-colors ${!solution
+                    ? 'opacity-40 cursor-not-allowed text-zinc-500'
                     : activeTab === 'solution'
-                    ? 'bg-orange-600 text-white font-semibold'
-                    : 'text-zinc-400 hover:text-zinc-200 hover:bg-[#242730]'
-                }`}
+                      ? 'bg-orange-600 text-white font-semibold'
+                      : 'text-zinc-400 hover:text-zinc-200 hover:bg-[#242730]'
+                  }`}
               >
                 <PieChart className="w-3.5 h-3.5" />
                 <span>Solución</span>
@@ -151,11 +147,10 @@ export default function App() {
                 <button
                   type="button"
                   onClick={() => setActiveTab('graphical')}
-                  className={`flex items-center gap-1.5 px-3 py-1.5 rounded-md transition-colors ${
-                    activeTab === 'graphical'
+                  className={`flex items-center gap-1.5 px-3 py-1.5 rounded-md transition-colors ${activeTab === 'graphical'
                       ? 'bg-orange-600 text-white font-semibold'
                       : 'text-zinc-400 hover:text-zinc-200 hover:bg-[#242730]'
-                  }`}
+                    }`}
                   title="Método Gráfico 2D para 2 variables"
                 >
                   <Compass className="w-3.5 h-3.5" />
@@ -240,7 +235,7 @@ export default function App() {
               <img src={escudoFicct} alt="FICCT" className="w-full h-full object-contain" />
             </div>
             <p className="text-zinc-300">
-              <strong className="text-zinc-100 font-semibold">Facultad Integral de Ciencias de la Computación y Telecomunicaciones (FICCT)</strong> &middot; UAGRM
+              <strong className="text-zinc-100 font-semibold">Facultad de Ciencias de la Computación y Telecomunicaciones (FICCT)</strong> &middot; UAGRM
             </p>
           </div>
           <div className="flex items-center gap-3 text-zinc-400">
